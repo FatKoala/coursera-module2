@@ -64,7 +64,7 @@ h2 {
 	margin-bottom: 20px;
 }
 
-#text-section {
+.text-section {
 	background: #084279;
 	padding: 25px;
 	margin-bottom: 25px;
@@ -73,6 +73,20 @@ h2 {
 h3 {
 	margin-bottom: 20px;
 	margin-top: 10px;
+}
+
+section a .jump {
+	margin-top: 25px;
+	color: white;
+}
+
+section a:hover {
+	text-decoration: none;
+}
+
+section a .jump:hover {
+	background: white;
+	color: #084279;
 }
 
 /* MAIN PAGE END */
