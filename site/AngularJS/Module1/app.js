@@ -40,13 +40,20 @@
 				}
 			}	
 
-			if (numOfItems == 0)
+			if (numOfItems == 0){
+				$scope.textColor = "red";
 				$scope.outputMessage = "Please enter data first!";
+				$scope.border = "solid 1px red";
+			}
 			else if (numOfItems > 3){
 				$scope.outputMessage = "Too much!";
+				$scope.textColor = "green";
+				$scope.border = "solid 1px green";
 			}
 			else{
 				$scope.outputMessage = "Enjoy!";
+				$scope.textColor = "green";
+				$scope.border = "solid 1px green";
 			}
 		}
 	}
