@@ -22,7 +22,6 @@
 			var inputArray = inputString.split(",");
 			var numOfItems = inputArray.length;
 			var temp = '';
-			console.log(inputArray);
 
 			for (var i = 0; i < inputArray.length; i++) {
 				temp = inputArray[i].split("");
