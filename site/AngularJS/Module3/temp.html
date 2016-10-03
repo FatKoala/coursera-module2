@@ -1,5 +1,5 @@
 <ol>
-  <li ng-repeat="item in narrowItCtrl.found">
+  <li ng-repeat="narrowItCtrl in list.found">
     {{ item.id }} of {{ item.name }}
     <button ng-click="narrowItCtrl.onRemove({index: $index});">Remove Item</button>
   </li>
