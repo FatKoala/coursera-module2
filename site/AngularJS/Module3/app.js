@@ -93,7 +93,7 @@ function ShoppingListDirectiveController() {
 
 
 function ShoppingListFactory() {
-  var factory = function () {
+  var factory = function ($http) {
     return new MenuSearchService();
   };
 
