@@ -4,18 +4,21 @@
 	angular.module('NarrowItDownApp', [])
 		.controller('NarrowItDownController', NarrowItDownController)
 		.service('MenuSearchService', MenuSearchService)
+		.factory('ShoppingListFactory', ShoppingListFactory)
 		.directive('foundItems', FoundItemsInList);
 
 
 
-	NarrowItDownController.$inject('MenuSearchService');
-	function NarrowItDownController(MenuSearchService){
+	NarrowItDownController.$inject = ['ShoppingListFactory'];
+	function NarrowItDownController(ShoppingListFactory){
 		var narrowItCtrl = this;
 		narrowItCtrl.found = [];
 
+		var list = ShoppingListFactory();
+
 		narrowItCtrl.button = function(searchTerm){
 			console.log(1);
-			var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+			var promise = list.getMatchedMenuItems(searchTerm);
 			
 			promise.then(function (response) {
 				var foundItems = [];
@@ -41,7 +44,7 @@
 		};
 
 		narrowItCtrl.remove = function (index){
-			MenuSearchService.remove(index);
+			list.remove(index);
 		}
 	}
 
@@ -86,6 +89,15 @@ function ShoppingListDirectiveController() {
   list.a = function () {
     
   };
+}
+
+
+function ShoppingListFactory() {
+  var factory = function () {
+    return new MenuSearchService();
+  };
+
+  return factory;
 }
 
 })();
